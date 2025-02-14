@@ -5,7 +5,7 @@ body {
   padding: 0;
   text-align: center;
   /* Light blue gradient background */
-  background: linear-gradient(135deg, #e0f7fa, #b3e5fc); /* Light blue gradient */
+  background: linear-gradient(to bottom right, #d0f0fd, #b3e5fc); /* Updated lighter blue gradient */
   color: #333; /* Text color for better readability */
 }
 
