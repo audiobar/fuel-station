@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Premium Soft Gradient Background */
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  /* Smooth soft gradient background */
+  background: linear-gradient(135deg, #e6f7ff, #ffffff);
   color: #333;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 #logo {
-  width: 300px; /* Increased Logo Size */
+  width: 350px;  /* Increased logo size */
   height: auto;
 }
 
@@ -68,6 +68,7 @@ main h2 {
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .rate:hover {
@@ -77,14 +78,14 @@ main h2 {
 
 .rate h3 {
   font-size: 22px;
-  color: #002855; /* Deep blue for premium feel */
+  color: #002855;
   margin-bottom: 12px;
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  color: #0077b6; /* Vibrant blue for prices */
+  color: #0077b6;
 }
 
 /* Footer */
