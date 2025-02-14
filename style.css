@@ -5,7 +5,7 @@ body {
   padding: 0;
   text-align: center;
   /* Light blue gradient background */
-  background: linear-gradient(135deg, #d9f1ff, #a6d8ff);
+  background: linear-gradient(135deg, #e0f7fa, #b3e5fc); /* Light blue gradient */
   color: #333; /* Text color for better readability */
 }
 
@@ -14,9 +14,9 @@ body {
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent light background */
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
   border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Header */
@@ -63,8 +63,8 @@ main h2 {
 }
 
 .rate {
-  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  padding: 30px; /* Larger card padding */
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+  padding: 30px;
   border-radius: 20px; /* Larger border radius */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -85,7 +85,7 @@ main h2 {
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  color: #28a745; /* Green for prices */
+  color: #4caf50; /* Green for prices */
 }
 
 /* Footer */
