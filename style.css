@@ -4,9 +4,9 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Black background with blue tint gradient */
-  background: linear-gradient(135deg, #000000, #001f3f);
-  color: #fff;
+  /* Light blue gradient background */
+  background: linear-gradient(135deg, #d9f1ff, #a6d8ff);
+  color: #333; /* Text color for better readability */
 }
 
 /* Container */
@@ -14,9 +14,9 @@ body {
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.85); /* semi-transparent dark container */
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent light background */
   border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Header */
@@ -32,20 +32,20 @@ header {
 }
 
 #logo {
-  width: 450px;  /* Increased logo size */
+  width: 450px; /* Increased logo size */
   height: auto;
 }
 
 .address {
   font-size: 16px;
-  color: #cccccc;
+  color: #555; /* Darker gray for address */
   line-height: 1.6;
 }
 
 /* Current Time */
 .current-time p {
   font-size: 18px;
-  color: #ffffff;
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -63,17 +63,17 @@ main h2 {
 }
 
 .rate {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;  /* Larger card padding */
-  border-radius: 20px;  /* Larger border radius */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  padding: 30px; /* Larger card padding */
+  border-radius: 20px; /* Larger border radius */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
 .rate:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .rate h3 {
@@ -92,13 +92,13 @@ main h2 {
 footer {
   margin-top: 30px;
   font-size: 14px;
-  color: #bbbbbb;
+  color: #555;
 }
 
 footer .view-all {
   display: inline-block;
   margin-top: 20px;
-  color: #ff6600;
+  color: #007bff; /* Blue for the link */
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
