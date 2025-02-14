@@ -1,88 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Station</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #007bff;
-        }
-        .fuel-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        .fuel-item {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: #f9f9f9;
-        }
-        .fuel-type {
-            font-weight: bold;
-        }
-        .price {
-            font-size: 1.5rem;
-            color: #28a745;
-        }
-        .loading {
-            color: orange;
-        }
-    </style>
+    <title>NL Oil Filling Station</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Daily Fuel Rates</h1>
-        <div id="fuelRates" class="fuel-grid">
-            <div class="fuel-item">
-                <div class="fuel-type">Diesel</div>
-                <div class="price loading">Loading...</div>
-            </div>
-            <div class="fuel-item">
-                <div class="fuel-type">Octane 92</div>
-                <div class="price loading">Loading...</div>
-            </div>
-            <div class="fuel-item">
-                <div class="fuel-type">Premium Diesel</div>
-                <div class="price loading">Loading...</div>
-            </div>
-            <div class="fuel-item">
-                <div class="fuel-type">Octane 95</div>
-                <div class="price loading">Loading...</div>
-            </div>
+    <div class="header">
+        <!-- Logo -->
+        <img src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" 
+             alt="Logo" class="logo">
+        
+        <!-- Address -->
+        <div class="address">
+            ရှမ်းချောင်းလမ်းမကြီး ၊ က.ရ.ခ(တိုင်း)ထိပ်<br>
+            မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br>
+            ☎️ : 09-8762005
         </div>
     </div>
-    <script>
-        const url = "https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json"; // Replace with your actual GitHub URL.
 
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                const items = document.querySelectorAll(".fuel-item");
-                items[0].querySelector(".price").textContent = `${data.diesel} MMK`;
-                items[1].querySelector(".price").textContent = `${data.octane92} MMK`;
-                items[2].querySelector(".price").textContent = `${data.premiumDiesel} MMK`;
-                items[3].querySelector(".price").textContent = `${data.octane95} MMK`;
-            })
-            .catch(error => {
-                console.error("Error fetching data:", error);
-            });
+    <!-- Date and Time -->
+    <div class="date-time" id="dateTime">
+        <!-- JS Will Auto Update Here -->
+    </div>
+
+    <!-- Daily Fuel Rates Title -->
+    <div class="daily-title">
+        <span class="emoji">⛽</span>
+        Daily Fuel Rates
+        <span class="emoji">📅</span>
+    </div>
+
+    <!-- Fuel Rate Grid -->
+    <div class="fuel-grid">
+        <div class="fuel-item">
+            <div class="fuel-type">DIESEL</div>
+            <div class="price" id="diesel-price">Loading...</div>
+        </div>
+        <div class="fuel-item">
+            <div class="fuel-type">OCTANE 92</div>
+            <div class="price" id="octane92-price">Loading...</div>
+        </div>
+        <div class="fuel-item">
+            <div class="fuel-type">PREMIUM DIESEL</div>
+            <div class="price" id="premium-diesel-price">Loading...</div>
+        </div>
+        <div class="fuel-item">
+            <div class="fuel-type">OCTANE 95</div>
+            <div class="price" id="octane95-price">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Note -->
+    <div class="note">
+        Effective on <span id="currentDate"></span><br>
+        Rates shown are indicative only and subject to change without notice.
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="#">SEE ALL FUEL PRICES ➔</a>
+    </div>
+
+    <script>
+        // Function to Update Date and Time
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("dateTime");
+            const currentDateElement = document.getElementById("currentDate");
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            
+            // Format Date and Time
+            const date = now.toLocaleDateString('en-US', options);
+            const time = now.toLocaleTimeString('en-US', { hour12: true });
+            
+            // Display on Page
+            dateTimeElement.textContent = `Current Time: ${time}`;
+            currentDateElement.textContent = date;
+        }
+
+        // Fetch Fuel Prices from JSON
+        async function fetchFuelPrices() {
+            try {
+                const response = await fetch("https://your-json-endpoint-url.json");
+                const data = await response.json();
+
+                document.getElementById("diesel-price").textContent = `${data.diesel} MMK`;
+                document.getElementById("octane92-price").textContent = `${data.octane92} MMK`;
+                document.getElementById("premium-diesel-price").textContent = `${data.premium_diesel} MMK`;
+                document.getElementById("octane95-price").textContent = `${data.octane95} MMK`;
+            } catch (error) {
+                console.error("Failed to load fuel prices:", error);
+            }
+        }
+
+        // Initialize Functions
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        fetchFuelPrices();
     </script>
 </body>
 </html>
