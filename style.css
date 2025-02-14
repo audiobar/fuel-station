@@ -80,12 +80,14 @@ main h2 {
   font-size: 22px;
   color: #ffa726; /* Light orange for product names */
   margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added shadow for 3D effect */
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
   color: #4caf50; /* Green for prices */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Slight shadow for prices */
 }
 
 /* Footer */
