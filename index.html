@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Station</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+        .fuel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .fuel-item {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #f9f9f9;
+        }
+        .fuel-type {
+            font-weight: bold;
+        }
+        .price {
+            font-size: 1.5rem;
+            color: #28a745;
+        }
+        .loading {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Fuel Rates</h1>
+        <div id="fuelRates" class="fuel-grid">
+            <div class="fuel-item">
+                <div class="fuel-type">Diesel</div>
+                <div class="price loading">Loading...</div>
+            </div>
+            <div class="fuel-item">
+                <div class="fuel-type">Octane 92</div>
+                <div class="price loading">Loading...</div>
+            </div>
+            <div class="fuel-item">
+                <div class="fuel-type">Premium Diesel</div>
+                <div class="price loading">Loading...</div>
+            </div>
+            <div class="fuel-item">
+                <div class="fuel-type">Octane 95</div>
+                <div class="price loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const url = "https://raw.githubusercontent.com/<username>/<repository-name>/main/fuel-prices.json"; // Replace with your actual GitHub URL.
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const items = document.querySelectorAll(".fuel-item");
+                items[0].querySelector(".price").textContent = `${data.diesel} MMK`;
+                items[1].querySelector(".price").textContent = `${data.octane92} MMK`;
+                items[2].querySelector(".price").textContent = `${data.premiumDiesel} MMK`;
+                items[3].querySelector(".price").textContent = `${data.octane95} MMK`;
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+            });
+    </script>
+</body>
+</html>
