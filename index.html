@@ -3,51 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuel Station</title>
+  <title>Fuel Station - Premium</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <img id="logo" src="YOUR_LOGO_URL" alt="Logo" />
+      <div class="logo-container">
+        <img id="logo" src="YOUR_LOGO_URL" alt="Logo" />
+        <h1>NL Oil Filling Station</h1>
+      </div>
       <p>
-        ဂရင်းကျေးလက်မြို့: က.ရ.ဆ(တိုင်)ထပ်မှတ်မှတ်တိုင်အပေါ်:<br />
-        <span>09-8762005</span>
+        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်: <br />
+        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br>
+        <span><strong>Hotline:</strong> 09-8762005</span>
       </p>
     </header>
 
     <main>
-      <h2>⛽ Daily Fuel Rates 📅</h2>
+      <div class="current-time">
+        <p>Current Time: <span id="time">Loading...</span></p>
+      </div>
+
+      <h2>⛽ Today's Fuel Rates 📅</h2>
       <div class="rates">
-        <div class="rate" id="diesel">Loading...</div>
-        <div class="rate" id="octane92">Loading...</div>
-        <div class="rate" id="premiumDiesel">Loading...</div>
-        <div class="rate" id="octane95">Loading...</div>
+        <div class="rate" id="diesel">
+          <h3>Diesel</h3>
+          <p>Loading...</p>
+        </div>
+        <div class="rate" id="octane92">
+          <h3>Octane 92</h3>
+          <p>Loading...</p>
+        </div>
+        <div class="rate" id="premiumDiesel">
+          <h3>Premium Diesel</h3>
+          <p>Loading...</p>
+        </div>
+        <div class="rate" id="octane95">
+          <h3>Octane 95</h3>
+          <p>Loading...</p>
+        </div>
       </div>
     </main>
+
     <footer>
       <p>Effective on February 14, 2025</p>
-      <p>Rates shown are indicative only and subject to change without notice.</p>
+      <p>Prices are indicative and subject to change without notice.</p>
+      <a href="#" class="view-all">See All Fuel Prices →</a>
     </footer>
   </div>
 
   <script>
+    // Update current time dynamically
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById("time").innerText = now.toLocaleTimeString();
+    }, 1000);
+
+    // Fetch fuel prices
     fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
-        document.querySelector("#diesel").innerText = `Diesel: ${data.diesel} MMK`;
-        document.querySelector("#octane92").innerText = `Octane 92: ${data.octane92} MMK`;
-        document.querySelector("#premiumDiesel").innerText = `Premium Diesel: ${data.premiumDiesel} MMK`;
-        document.querySelector("#octane95").innerText = `Octane 95: ${data.octane95} MMK`;
+        document.querySelector("#diesel p").innerText = `${data.diesel} MMK`;
+        document.querySelector("#octane92 p").innerText = `${data.octane92} MMK`;
+        document.querySelector("#premiumDiesel p").innerText = `${data.premiumDiesel} MMK`;
+        document.querySelector("#octane95 p").innerText = `${data.octane95} MMK`;
       })
       .catch((error) => {
-        console.error("Error fetching JSON:", error);
-        document.querySelectorAll(".rate").forEach((el) => {
+        console.error("Error fetching data:", error);
+        document.querySelectorAll(".rate p").forEach((el) => {
           el.innerText = "Failed to Load";
         });
       });
