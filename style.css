@@ -4,9 +4,9 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Blue gradient background */
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-  color: #333;
+  /* Black background with a slight blue tint */
+  background: linear-gradient(135deg, #000000, #001f3f);
+  color: #fff;
 }
 
 /* Container */
@@ -14,9 +14,9 @@ body {
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.7); /* semi-transparent container */
   border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Header */
@@ -32,26 +32,26 @@ header {
 }
 
 #logo {
-  width: 400px;  /* Increased logo size */
+  width: 450px;  /* Increased logo size */
   height: auto;
 }
 
 .address {
   font-size: 16px;
-  color: #555;
+  color: #cccccc;
   line-height: 1.6;
 }
 
 /* Current Time */
 .current-time p {
   font-size: 18px;
-  color: #0d6efd;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
 /* Main Rates Section */
 main h2 {
-  color: #c62828;
+  color: #ff6600; /* Vibrant orange for the title */
   font-size: 28px;
   margin-bottom: 25px;
 }
@@ -63,42 +63,44 @@ main h2 {
 }
 
 .rate {
-  background: linear-gradient(145deg, #ffffff, #f0f5ff);
-  padding: 30px;  /* Increased padding for a larger card */
-  border-radius: 20px;  /* Slightly larger border radius */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;  /* Larger card padding */
+  border-radius: 20px;  /* Larger border radius */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
 .rate:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
 .rate h3 {
   font-size: 22px;
-  color: #95a5a6; /* Light grey for product names */
+  /* Light orange for product names */
+  color: #ffa726; 
   margin-bottom: 12px;
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  color: #28a745; /* Green for prices */
+  /* Dark orange for prices */
+  color: #f57c00;
 }
 
 /* Footer */
 footer {
   margin-top: 30px;
   font-size: 14px;
-  color: #6b7280;
+  color: #bbbbbb;
 }
 
 footer .view-all {
   display: inline-block;
   margin-top: 20px;
-  color: #0056b3;
+  color: #ff6600;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
