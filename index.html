@@ -1,104 +1,56 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NL Oil Filling Station</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuel Station</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <!-- Logo -->
-        <img src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" 
-             alt="Logo" class="logo">
-        
-        <!-- Address -->
-        <div class="address">
-            ရှမ်းချောင်းလမ်းမကြီး ၊ က.ရ.ခ(တိုင်း)ထိပ်<br>
-            မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br>
-            ☎️ : 09-8762005
-        </div>
-    </div>
+  <div class="container">
+    <header>
+      <img id="logo" src="YOUR_LOGO_URL" alt="Logo" />
+      <p>
+        ဂရင်းကျေးလက်မြို့: က.ရ.ဆ(တိုင်)ထပ်မှတ်မှတ်တိုင်အပေါ်:<br />
+        <span>09-8762005</span>
+      </p>
+    </header>
 
-    <!-- Date and Time -->
-    <div class="date-time" id="dateTime">
-        <!-- JS Will Auto Update Here -->
-    </div>
+    <main>
+      <h2>⛽ Daily Fuel Rates 📅</h2>
+      <div class="rates">
+        <div class="rate" id="diesel">Loading...</div>
+        <div class="rate" id="octane92">Loading...</div>
+        <div class="rate" id="premiumDiesel">Loading...</div>
+        <div class="rate" id="octane95">Loading...</div>
+      </div>
+    </main>
+    <footer>
+      <p>Effective on February 14, 2025</p>
+      <p>Rates shown are indicative only and subject to change without notice.</p>
+    </footer>
+  </div>
 
-    <!-- Daily Fuel Rates Title -->
-    <div class="daily-title">
-        <span class="emoji">⛽</span>
-        Daily Fuel Rates
-        <span class="emoji">📅</span>
-    </div>
-
-    <!-- Fuel Rate Grid -->
-    <div class="fuel-grid">
-        <div class="fuel-item">
-            <div class="fuel-type">DIESEL</div>
-            <div class="price" id="diesel-price">Loading...</div>
-        </div>
-        <div class="fuel-item">
-            <div class="fuel-type">OCTANE 92</div>
-            <div class="price" id="octane92-price">Loading...</div>
-        </div>
-        <div class="fuel-item">
-            <div class="fuel-type">PREMIUM DIESEL</div>
-            <div class="price" id="premium-diesel-price">Loading...</div>
-        </div>
-        <div class="fuel-item">
-            <div class="fuel-type">OCTANE 95</div>
-            <div class="price" id="octane95-price">Loading...</div>
-        </div>
-    </div>
-
-    <!-- Note -->
-    <div class="note">
-        Effective on <span id="currentDate"></span><br>
-        Rates shown are indicative only and subject to change without notice.
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <a href="#">SEE ALL FUEL PRICES ➔</a>
-    </div>
-
-    <script>
-        // Function to Update Date and Time
-        function updateDateTime() {
-            const dateTimeElement = document.getElementById("dateTime");
-            const currentDateElement = document.getElementById("currentDate");
-            const now = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            
-            // Format Date and Time
-            const date = now.toLocaleDateString('en-US', options);
-            const time = now.toLocaleTimeString('en-US', { hour12: true });
-            
-            // Display on Page
-            dateTimeElement.textContent = `Current Time: ${time}`;
-            currentDateElement.textContent = date;
+  <script>
+    fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
-
-        // Fetch Fuel Prices from JSON
-        async function fetchFuelPrices() {
-            try {
-                const response = await fetch("https://your-json-endpoint-url.json");
-                const data = await response.json();
-
-                document.getElementById("diesel-price").textContent = `${data.diesel} MMK`;
-                document.getElementById("octane92-price").textContent = `${data.octane92} MMK`;
-                document.getElementById("premium-diesel-price").textContent = `${data.premium_diesel} MMK`;
-                document.getElementById("octane95-price").textContent = `${data.octane95} MMK`;
-            } catch (error) {
-                console.error("Failed to load fuel prices:", error);
-            }
-        }
-
-        // Initialize Functions
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-        fetchFuelPrices();
-    </script>
+        return response.json();
+      })
+      .then((data) => {
+        document.querySelector("#diesel").innerText = `Diesel: ${data.diesel} MMK`;
+        document.querySelector("#octane92").innerText = `Octane 92: ${data.octane92} MMK`;
+        document.querySelector("#premiumDiesel").innerText = `Premium Diesel: ${data.premiumDiesel} MMK`;
+        document.querySelector("#octane95").innerText = `Octane 95: ${data.octane95} MMK`;
+      })
+      .catch((error) => {
+        console.error("Error fetching JSON:", error);
+        document.querySelectorAll(".rate").forEach((el) => {
+          el.innerText = "Failed to Load";
+        });
+      });
+  </script>
 </body>
 </html>
