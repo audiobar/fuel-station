@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Soft pastel gradient background */
-  background: linear-gradient(135deg, #d1e8ff, #ffffff);
+  /* Blue gradient background */
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
   color: #333;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 #logo {
-  width: 450px;  /* Increased logo size */
+  width: 400px;  /* Increased logo size */
   height: auto;
 }
 
@@ -64,8 +64,8 @@ main h2 {
 
 .rate {
   background: linear-gradient(145deg, #ffffff, #f0f5ff);
-  padding: 25px;
-  border-radius: 15px;
+  padding: 30px;  /* Increased padding for a larger card */
+  border-radius: 20px;  /* Slightly larger border radius */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -78,14 +78,14 @@ main h2 {
 
 .rate h3 {
   font-size: 22px;
-  color: #003366; /* Dark blue for fuel type names */
+  color: #95a5a6; /* Light grey for product names */
   margin-bottom: 12px;
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  color: #ff6600; /* Vibrant orange for prices */
+  color: #28a745; /* Green for prices */
 }
 
 /* Footer */
