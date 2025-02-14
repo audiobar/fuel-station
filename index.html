@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuel Station - Premium</title>
+  <title>Fuel Station - Dynamic Pricing</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo-container">
-        <!-- Logo URL: သင့် Logo URL ကို အသုံးပြုပါ -->
         <img id="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" alt="Logo" />
       </div>
       <p class="address">
-        ရှမ်းချောင်းလမ်းမကြီး ၊ က.ရ.ခ(တိုင်း)ထိပ်<br />
-        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br />
-        <span><strong>📞 09-8762005</strong></span>
+        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်: <br />
+        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး <br />
+        <span><strong>📞 Hotline:</strong> 09-8762005</span>
       </p>
     </header>
 
@@ -54,27 +53,40 @@
   </div>
 
   <script>
-    // Update current time dynamically with AM/PM format
+    // Update current time dynamically
     setInterval(() => {
       const now = new Date();
-      document.getElementById("time").innerText = now.toLocaleTimeString("en-US", { hour12: true });
+      document.getElementById("time").innerText = now.toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      });
     }, 1000);
 
-    // Fetch fuel prices from the GitHub-hosted JSON file
-    fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
-      .then(response => response.json())
-      .then(data => {
-        document.querySelector("#diesel p").innerText = `${data.diesel} MMK`;
-        document.querySelector("#octane92 p").innerText = `${data.octane92} MMK`;
-        document.querySelector("#premiumDiesel p").innerText = `${data.premiumDiesel} MMK`;
-        document.querySelector("#octane95 p").innerText = `${data.octane95} MMK`;
-      })
-      .catch(error => {
-        console.error("Error fetching data:", error);
-        document.querySelectorAll(".rate p").forEach(el => {
-          el.innerText = "Failed to Load";
+    // Fetch fuel prices dynamically
+    const fetchPrices = () => {
+      fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
+        .then((response) => response.json())
+        .then((data) => {
+          document.querySelector("#diesel p").innerText = `${data.diesel} MMK`;
+          document.querySelector("#octane92 p").innerText = `${data.octane92} MMK`;
+          document.querySelector("#premiumDiesel p").innerText = `${data.premiumDiesel} MMK`;
+          document.querySelector("#octane95 p").innerText = `${data.octane95} MMK`;
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          document.querySelectorAll(".rate p").forEach((el) => {
+            el.innerText = "Failed to Load";
+          });
         });
-      });
+    };
+
+    // Fetch prices immediately on load
+    fetchPrices();
+
+    // Refresh prices every 10 seconds
+    setInterval(fetchPrices, 10000); // 10,000ms = 10 seconds
   </script>
 </body>
 </html>
