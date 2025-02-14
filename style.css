@@ -1,33 +1,60 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom, #f8fafc, #e9eef5);
+  color: #333;
 }
 
+/* Container */
 .container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 20px auto;
   padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header */
 header {
   margin-bottom: 20px;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 #logo {
-  width: 200px;
+  width: 80px;
   height: auto;
+}
+
+header h1 {
+  font-size: 22px;
+  color: #0056b3;
 }
 
 header p {
   font-size: 14px;
-  margin: 10px 0;
+  color: #555;
 }
 
+/* Time */
+.current-time {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #007bff;
+}
+
+/* Main Rates Section */
 main h2 {
-  color: #e63946;
+  color: #d62828;
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -35,20 +62,45 @@ main h2 {
 .rates {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
 .rate {
-  background: #fff;
-  padding: 15px;
+  background: #f1f5f9;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
-  color: #1d3557;
+  text-align: center;
 }
 
+.rate h3 {
+  font-size: 18px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.rate p {
+  font-size: 16px;
+  color: #111827;
+  font-weight: bold;
+}
+
+/* Footer */
 footer {
   margin-top: 20px;
   font-size: 12px;
-  color: #666;
+  color: #6b7280;
+}
+
+footer .view-all {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0056b3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer .view-all:hover {
+  text-decoration: underline;
 }
