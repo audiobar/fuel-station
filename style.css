@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Smooth soft gradient background */
-  background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  /* Soft pastel gradient background */
+  background: linear-gradient(135deg, #d1e8ff, #ffffff);
   color: #333;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 #logo {
-  width: 350px;  /* Increased logo size */
+  width: 450px;  /* Increased logo size */
   height: auto;
 }
 
@@ -78,14 +78,14 @@ main h2 {
 
 .rate h3 {
   font-size: 22px;
-  color: #002855;
+  color: #003366; /* Dark blue for fuel type names */
   margin-bottom: 12px;
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  color: #0077b6;
+  color: #ff6600; /* Vibrant orange for prices */
 }
 
 /* Footer */
