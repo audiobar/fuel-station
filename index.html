@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuel Station - Premium</title>
+  <title>Fuel Station</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,7 +11,6 @@
     <header>
       <div class="logo-container">
         <img id="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" alt="Logo" />
-        <h1>NL Oil Filling Station</h1>
       </div>
       <p>
         ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်: <br />
@@ -54,13 +53,11 @@
   </div>
 
   <script>
-    // Update current time dynamically
     setInterval(() => {
       const now = new Date();
       document.getElementById("time").innerText = now.toLocaleTimeString();
     }, 1000);
 
-    // Fetch fuel prices
     fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
       .then((response) => response.json())
       .then((data) => {
