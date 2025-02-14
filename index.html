@@ -10,13 +10,13 @@
   <div class="container">
     <header>
       <div class="logo-container">
-        <!-- Logo URL: Update if needed -->
+        <!-- Logo: Update URL if needed -->
         <img id="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" alt="Logo" />
       </div>
       <p class="address">
         ရှမ်းချောင်းလမ်းမကြီး ၊ က.ရ.ခ(တိုင်း)ထိပ်<br />
         မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br />
-        <span><strong>☎️:</strong> 09-8762005</span>
+        <span><strong>Hotline:</strong> 09-8762005</span>
       </p>
     </header>
 
@@ -60,7 +60,7 @@
       document.getElementById("time").innerText = now.toLocaleTimeString("en-US", { hour12: true });
     }, 1000);
 
-    // Fetch fuel prices from the GitHub-hosted JSON file
+    // Fetch fuel prices from GitHub JSON file
     fetch("https://raw.githubusercontent.com/audiobar/fuel-station/refs/heads/main/fuel-prices.json")
       .then(response => response.json())
       .then(data => {
