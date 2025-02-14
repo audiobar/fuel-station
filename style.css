@@ -12,48 +12,47 @@ body {
 .container {
   max-width: 800px;
   margin: 20px auto;
-  padding: 20px;
-  background: #ffffff;
+  padding: 30px;
+  background: #fff;
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
 header {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  margin-bottom: 15px;
 }
 
 #logo {
-  width: 200px; /* Logo size increased */
+  width: 250px; /* Increased Logo Size */
   height: auto;
 }
 
-header p {
-  font-size: 14px;
+.address {
+  font-size: 16px;
   color: #555;
-  margin-top: 10px;
   line-height: 1.6;
 }
 
-/* Time */
-.current-time {
+/* Current Time */
+.current-time p {
   font-size: 18px;
-  margin: 10px 0;
   color: #0d6efd;
+  margin-bottom: 20px;
 }
 
 /* Main Rates Section */
 main h2 {
   color: #d32f2f;
   font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .rates {
@@ -68,7 +67,7 @@ main h2 {
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .rate:hover {
@@ -77,13 +76,13 @@ main h2 {
 }
 
 .rate h3 {
-  font-size: 20px;
+  font-size: 22px;
   color: #003d66;
   margin-bottom: 10px;
 }
 
 .rate p {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   color: #0077b6;
 }
@@ -97,7 +96,7 @@ footer {
 
 footer .view-all {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   color: #0056b3;
   text-decoration: none;
   font-size: 16px;
