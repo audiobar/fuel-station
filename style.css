@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  /* Black background with a slight blue tint */
-  background: linear-gradient(135deg, #000000, #001f3f);
+  /* Blue-tinted background */
+  background: linear-gradient(135deg, #a0c4ff, #d0e7ff);
   color: #fff;
 }
 
@@ -14,7 +14,7 @@ body {
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
-  background: rgba(0, 0, 0, 0.7); /* semi-transparent container */
+  background: rgba(0, 0, 0, 0.75); /* semi-transparent dark container */
   border-radius: 15px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
@@ -51,7 +51,7 @@ header {
 
 /* Main Rates Section */
 main h2 {
-  color: #ff6600; /* Vibrant orange for the title */
+  color: #ff6600; /* Vibrant orange for title */
   font-size: 28px;
   margin-bottom: 25px;
 }
@@ -64,8 +64,8 @@ main h2 {
 
 .rate {
   background: rgba(255, 255, 255, 0.1);
-  padding: 30px;  /* Larger card padding */
-  border-radius: 20px;  /* Larger border radius */
+  padding: 30px;
+  border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -78,16 +78,14 @@ main h2 {
 
 .rate h3 {
   font-size: 22px;
-  /* Light orange for product names */
-  color: #ffa726; 
+  color: #ff8c66; /* Beautiful light coral for product names */
   margin-bottom: 12px;
 }
 
 .rate p {
   font-size: 24px;
   font-weight: bold;
-  /* Dark orange for prices */
-  color: #f57c00;
+  color: #28a745; /* Green for prices */
 }
 
 /* Footer */
