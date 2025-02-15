@@ -1,57 +1,60 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #D9E8FC; /* ✅ Light Blue Background */
-    text-align: center;
+    background: #e3f2fd; /* Light Blue Background */
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .container {
-    max-width: 700px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img {
+    width: 120px; /* Large Logo */
+    display: block;
+    margin: auto;
+}
+
+.address {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.datetime {
+    background: #42a5f5;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.rates {
     display: flex;
     flex-direction: column;
-    align-items: center; /* ✅ Centering Everything */
+    gap: 15px;
 }
 
-.logo {
-    width: auto;
-    height: 90px;
-    display: block;
-    margin: 0 auto;
-}
-
-.date-time {
-    font-size: 18px;
-    color: #004080; /* ✅ Dark Blue for Better Visibility */
-}
-
-.fuel-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.fuel-box {
-    width: 90%;
+.rate {
     padding: 15px;
-    background: white;
-    border-radius: 10px;
-    margin: 10px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.fuel-name {
-    font-size: 18px;
-    color: #ff6600; /* ✅ Orange */
-    font-weight: bold;
-}
-
-.fuel-price {
+    border-radius: 8px;
     font-size: 20px;
-    color: #008000; /* ✅ Green */
+    font-weight: bold;
+    color: white;
+}
+
+#diesel { background: #ff9800; }  /* Orange */
+#octane92 { background: #f44336; }  /* Red */
+#premiumDiesel { background: #4caf50; }  /* Green */
+#octane95 { background: #3f51b5; }  /* Blue */
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: gray;
 }
