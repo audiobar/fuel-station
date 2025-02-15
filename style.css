@@ -1,83 +1,57 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #E3F2FD; /* Light Blue */
+    background-color: #D9E8FC; /* ✅ Light Blue Background */
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
+    max-width: 700px;
+    margin: 20px auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Logo */
-.logo {
-    width: 120px; /* Increased Size */
-    margin: 10px auto;
-    display: block;
-}
-
-/* Header */
-header p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-.phone {
-    font-weight: bold;
-    color: #D32F2F;
-}
-
-/* Date & Time */
-.datetime p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #1565C0; /* Dark Blue */
-}
-
-/* Title */
-h2 {
-    color: black;
-}
-
-/* Fuel Cards */
-.rates {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+    flex-direction: column;
+    align-items: center; /* ✅ Centering Everything */
 }
 
-.rate {
-    background: white;
+.logo {
+    width: auto;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+}
+
+.date-time {
+    font-size: 18px;
+    color: #004080; /* ✅ Dark Blue for Better Visibility */
+}
+
+.fuel-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.fuel-box {
+    width: 90%;
     padding: 15px;
+    background: white;
     border-radius: 10px;
-    width: 250px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .fuel-name {
-    color: #FF9800; /* Orange */
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.price {
-    color: #4CAF50; /* Green */
     font-size: 18px;
+    color: #ff6600; /* ✅ Orange */
     font-weight: bold;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    color: gray;
+.fuel-price {
+    font-size: 20px;
+    color: #008000; /* ✅ Green */
 }
