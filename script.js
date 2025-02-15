@@ -11,7 +11,7 @@ updateDateTime(); // Run immediately
 
 // Function to fetch fuel prices
 function fetchFuelPrices() {
-    fetch("fuel-prices.json")  // ✅ Check that this file exists in the root directory!
+    fetch("fuel-prices.json")  // ✅ Ensure this file exists in the root directory!
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch fuel prices");
