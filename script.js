@@ -1,25 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    function updateDateTime() {
-        let now = new Date();
-        let date = now.toLocaleDateString();
-        let time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
-        
-        document.getElementById("current-date").textContent = date;
-        document.getElementById("current-time").textContent = time;
-    }
+// Update Time & Date
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+    const dateString = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    
+    document.getElementById("time").innerText = timeString;
+    document.getElementById("date").innerText = dateString;
+}
 
-    updateDateTime();
-    setInterval(updateDateTime, 1000); // ✅ Update every second
+setInterval(updateTime, 1000);
+updateTime();
 
-    function updateFuelPrices() {
-        // ✅ Simulated data fetch (Replace with API if needed)
-        setTimeout(() => {
-            document.getElementById("diesel-price").textContent = "2150 MMK";
-            document.getElementById("octane92-price").textContent = "2250 MMK";
-            document.getElementById("premium-diesel-price").textContent = "2300 MMK";
-            document.getElementById("octane95-price").textContent = "2400 MMK";
-        }, 1500); // ✅ Simulate 1.5-second loading
-    }
-
-    updateFuelPrices();
-});
+// Fetch Fuel Prices
+fetch("fuel-prices.json")
+    .then(response => response.json())
+    .then(data => {
+        document.querySelector("#diesel p").innerText = `${data.diesel} MMK`;
+        document.querySelector("#octane92 p").innerText = `${data.octane92} MMK`;
+        document.querySelector("#premiumDiesel p").innerText = `${data.premiumDiesel} MMK`;
+        document.querySelector("#octane95 p").innerText = `${data.octane95} MMK`;
+        document.getElementById("effective-date").innerText = data.date;
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+        document.querySelectorAll(".rate p").forEach(el => el.innerText = "Failed to Load");
+    });
