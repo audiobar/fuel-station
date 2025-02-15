@@ -11,8 +11,13 @@ updateDateTime(); // Run immediately
 
 // Function to fetch fuel prices
 function fetchFuelPrices() {
-    fetch("https://raw.githubusercontent.com/audiobar/fuel-station/main/fuel-prices.json")
-        .then(response => response.json())
+    fetch("fuel-prices.json")  // ✅ Check that this file exists in the root directory!
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch fuel prices");
+            }
+            return response.json();
+        })
         .then(data => {
             document.querySelector("#diesel .price").innerText = `${data.diesel} MMK`;
             document.querySelector("#octane92 .price").innerText = `${data.octane92} MMK`;
@@ -22,7 +27,7 @@ function fetchFuelPrices() {
         })
         .catch(error => {
             console.error("Error fetching data:", error);
-            document.querySelectorAll(".price").forEach(el => el.innerText = "Failed to Load");
+            document.querySelectorAll(".price").forEach(el => el.innerText = "Failed to Load ❌");
         });
 }
 
