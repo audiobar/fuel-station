@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fuel Station - Dynamic Pricing</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuel Station - Premium</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-container">
-        <img id="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" alt="Logo" />
-      </div>
-      <p class="address">
-        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်: <br />
-        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး <br />
-        <span><strong>📞 Hotline:</strong> 09-8762005</span>
-      </p>
-    </header>
+    <div class="container">
+        <header>
+            <img class="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=500x500&crop=0&type=auto" alt="Logo" />
+            <p>ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်:<br />မြိတ်မြို့၊ တနင်္သာရီတိုင်းဒေသကြီး</p>
+            <p><span class="phone">📞 Hotline:</span> 09-8762005</p>
+        </header>
 
-    <main>
-      <div class="date-time">
-        <p id="date">Date: Loading...</p>
-        <p id="time">Time: Loading...</p>
-      </div>
+        <div class="datetime">
+            <p><strong>Date:</strong> <span id="currentDate">Loading...</span></p>
+            <p><strong>Time:</strong> <span id="currentTime">Loading...</span></p>
+        </div>
 
-      <h2>⛽ Today's Fuel Rates 📅</h2>
-      <div class="rates">
-        <div class="rate" id="diesel">
-          <h3>Diesel</h3>
-          <p>Loading...</p>
+        <h2>⛽ <span class="title">Today's Fuel Rates</span> 📅</h2>
+        <div class="rates">
+            <div class="rate" id="diesel">
+                <h3 class="fuel-name">Diesel</h3>
+                <p class="price">Loading...</p>
+            </div>
+            <div class="rate" id="octane92">
+                <h3 class="fuel-name">Octane 92</h3>
+                <p class="price">Loading...</p>
+            </div>
+            <div class="rate" id="premiumDiesel">
+                <h3 class="fuel-name">Premium Diesel</h3>
+                <p class="price">Loading...</p>
+            </div>
+            <div class="rate" id="octane95">
+                <h3 class="fuel-name">Octane 95</h3>
+                <p class="price">Loading...</p>
+            </div>
         </div>
-        <div class="rate" id="octane92">
-          <h3>Octane 92</h3>
-          <p>Loading...</p>
-        </div>
-        <div class="rate" id="premiumDiesel">
-          <h3>Premium Diesel</h3>
-          <p>Loading...</p>
-        </div>
-        <div class="rate" id="octane95">
-          <h3>Octane 95</h3>
-          <p>Loading...</p>
-        </div>
-      </div>
-    </main>
 
-    <footer>
-      <p>Effective on February 14, 2025</p>
-      <p>Prices are indicative and subject to change without notice.</p>
-      <a href="#" class="view-all">See All Fuel Prices →</a>
-    </footer>
-  </div>
+        <footer>
+            <p>Effective on <span id="updateDate">Loading...</span></p>
+            <p>Prices are indicative and subject to change without notice.</p>
+        </footer>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
