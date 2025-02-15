@@ -1,36 +1,25 @@
-// Function to update date and time
-function updateDateTime() {
-    const now = new Date();
-    document.getElementById("currentDate").innerText = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    document.getElementById("currentTime").innerText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
-}
+document.addEventListener("DOMContentLoaded", function () {
+    function updateDateTime() {
+        let now = new Date();
+        let date = now.toLocaleDateString();
+        let time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+        
+        document.getElementById("current-date").textContent = date;
+        document.getElementById("current-time").textContent = time;
+    }
 
-// Auto update time every second
-setInterval(updateDateTime, 1000);
-updateDateTime(); // Run immediately
+    updateDateTime();
+    setInterval(updateDateTime, 1000); // ✅ Update every second
 
-// Function to fetch fuel prices
-function fetchFuelPrices() {
-    fetch("fuel-prices.json")  // ✅ Ensure this file exists in the root directory!
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to fetch fuel prices");
-            }
-            return response.json();
-        })
-        .then(data => {
-            document.querySelector("#diesel .price").innerText = `${data.diesel} MMK`;
-            document.querySelector("#octane92 .price").innerText = `${data.octane92} MMK`;
-            document.querySelector("#premiumDiesel .price").innerText = `${data.premiumDiesel} MMK`;
-            document.querySelector("#octane95 .price").innerText = `${data.octane95} MMK`;
-            document.getElementById("updateDate").innerText = data.date;
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-            document.querySelectorAll(".price").forEach(el => el.innerText = "Failed to Load ❌");
-        });
-}
+    function updateFuelPrices() {
+        // ✅ Simulated data fetch (Replace with API if needed)
+        setTimeout(() => {
+            document.getElementById("diesel-price").textContent = "2150 MMK";
+            document.getElementById("octane92-price").textContent = "2250 MMK";
+            document.getElementById("premium-diesel-price").textContent = "2300 MMK";
+            document.getElementById("octane95-price").textContent = "2400 MMK";
+        }, 1500); // ✅ Simulate 1.5-second loading
+    }
 
-// Fetch prices every 60 seconds
-setInterval(fetchFuelPrices, 60000);
-fetchFuelPrices(); // Run immediately
+    updateFuelPrices();
+});
