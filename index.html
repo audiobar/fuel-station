@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fuel Station - Premium</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NL Oil Filling Station</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
     <div class="container">
-        <header>
-            <img class="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=500x500&crop=0&type=auto" alt="Logo" />
-            <p>ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်:<br />မြိတ်မြို့၊ တနင်္သာရီတိုင်းဒေသကြီး</p>
-            <p><span class="phone">📞 Hotline:</span> 09-8762005</p>
-        </header>
+        <img class="logo" src="logo.png" alt="NL Oil Logo">
+        <h1>NL Oil Filling Station</h1>
+        <p>မြန်မာ့ရေကြောင်းလမ်းမကြီး | က.ရ.ခ(တိုက်)ထိပ်<br>မြို့ပြမြင် | တန်ဖိုးရှိသောဆီအရောင်း</p>
+        <p><span class="phone-icon">📞</span> <b>Hotline:</b> 09-8762005</p>
 
-        <div class="datetime">
-            <p><strong>Date:</strong> <span id="currentDate">Loading...</span></p>
-            <p><strong>Time:</strong> <span id="currentTime">Loading...</span></p>
+        <h3 class="date-time">📅 Date: <span id="current-date">Loading...</span></h3>
+        <h3 class="date-time">⏰ Time: <span id="current-time">Loading...</span></h3>
+
+        <h2 class="fuel-title">⛽ Today’s Fuel Rates 📆</h2>
+
+        <div class="fuel-box">
+            <h3 class="fuel-name">Diesel</h3>
+            <p class="fuel-price" id="diesel-price">Loading...</p>
         </div>
 
-        <h2>⛽ <span class="title">Today's Fuel Rates</span> 📅</h2>
-        <div class="rates">
-            <div class="rate" id="diesel">
-                <h3 class="fuel-name">Diesel</h3>
-                <p class="price">Loading...</p>
-            </div>
-            <div class="rate" id="octane92">
-                <h3 class="fuel-name">Octane 92</h3>
-                <p class="price">Loading...</p>
-            </div>
-            <div class="rate" id="premiumDiesel">
-                <h3 class="fuel-name">Premium Diesel</h3>
-                <p class="price">Loading...</p>
-            </div>
-            <div class="rate" id="octane95">
-                <h3 class="fuel-name">Octane 95</h3>
-                <p class="price">Loading...</p>
-            </div>
+        <div class="fuel-box">
+            <h3 class="fuel-name">Octane 92</h3>
+            <p class="fuel-price" id="octane92-price">Loading...</p>
         </div>
 
-        <footer>
-            <p>Effective on <span id="updateDate">Loading...</span></p>
-            <p>Prices are indicative and subject to change without notice.</p>
-        </footer>
+        <div class="fuel-box">
+            <h3 class="fuel-name">Premium Diesel</h3>
+            <p class="fuel-price" id="premium-diesel-price">Loading...</p>
+        </div>
+
+        <div class="fuel-box">
+            <h3 class="fuel-name">Octane 95</h3>
+            <p class="fuel-price" id="octane95-price">Loading...</p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
