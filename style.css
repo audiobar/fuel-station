@@ -1,106 +1,114 @@
-/* Global Styles */
-body {
-  font-family: "Roboto", Arial, sans-serif;
+/* Basic Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Light Blue Background */
+  margin: 0;
+  padding: 20px;
   text-align: center;
-  /* Light blue gradient background */
-  background: linear-gradient(135deg, #d0e8ff, #a6d8ff);
   color: #333;
 }
 
 .container {
   max-width: 700px;
-  margin: 30px auto;
+  margin: 0 auto;
   background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
 }
 
-/* Header */
-.logo-container {
-  margin-bottom: 20px;
+/* Header & Logo */
+.header {
+  margin-bottom: 10px;
 }
 
-#logo {
-  width: 400px;  /* Larger logo for clarity */
+.logo {
+  width: 300px; /* Larger logo for clarity */
   height: auto;
   display: block;
-  margin: auto;
+  margin: 0 auto 10px;
 }
 
 .address {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
   color: #555;
-  line-height: 1.6;
 }
 
-.hotline {
+/* Time Display */
+.time {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Daily Fuel Rates Title */
+.daily-title {
+  font-size: 1.8rem;
+  color: #ff6f61;
   font-weight: bold;
-  color: #c62828;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* Date & Time (Plain Text with Emojis) */
-.datetime p {
-  font-size: 18px;
-  margin: 5px 0;
-  color: #1565c0;
-}
-
-/* Fuel Title */
-.fuel-title {
-  font-size: 28px;
-  color: #ff6600;
-  margin-bottom: 20px;
-}
-
-/* Make the fuel pump emoji larger */
 .emoji {
-  font-size: 48px; /* Increase emoji size */
-  vertical-align: middle;
-  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 /* Fuel Grid */
 .fuel-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
   margin-bottom: 20px;
 }
 
 .fuel-item {
   background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid #dfe2e5;
+  border-radius: 6px;
   text-align: center;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.fuel-name {
-  font-size: 20px;
-  color: #ffa726; /* Light orange for names */
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-.fuel-price {
-  font-size: 22px;
-  color: #4caf50; /* Green for prices */
+.fuel-type {
+  color: #007bff;
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  white-space: nowrap; /* ensure PREMIUM DIESEL does not wrap */
+}
+
+.price {
+  font-size: 1.5rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Note */
+.note {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Footer */
-footer {
-  font-size: 14px;
-  color: #777;
-  margin-top: 20px;
+.footer {
+  margin-top: 1rem;
 }
 
-.footer a,
-.view-all {
+.footer a {
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
