@@ -14,10 +14,10 @@ updateDateTime();
 function updateFuelPrices() {
   const data = {
     date: "February 16, 2025",
-    diesel: "2700 MMK",
-    octane92: "2600 MMK",
-    premiumDiesel: "3000 MMK",
-    octane95: "3200 MMK"
+    diesel: "3400 MMK",
+    octane92: "3300 MMK",
+    premiumDiesel: "3450 MMK",
+    octane95: "3370 MMK"
   };
 
   document.getElementById("dieselPrice").innerText = data.diesel;
