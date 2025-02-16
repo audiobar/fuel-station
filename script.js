@@ -1,21 +1,32 @@
-// Auto Update Time
-function updateTime() {
+// Update Date and Time with Emojis Only
+function updateDateTime() {
   const now = new Date();
-  const timeStr = now.toLocaleTimeString("en-US", {
-    hour12: true,
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  });
-  document.getElementById("timeDisplay").textContent = "Current Time: " + timeStr;
+  const dateStr = now.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+  const timeStr = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true });
+  document.getElementById("current-date").innerText = "📅 " + dateStr;
+  document.getElementById("current-time").innerText = "⏰ " + timeStr;
 }
 
-// 1-second interval for time
-setInterval(updateTime, 1000);
-updateTime();
+setInterval(updateDateTime, 1000);
+updateDateTime();
 
-// Hard-coded Fuel Prices
-document.getElementById("dieselPrice").textContent = "2125 MMK";
-document.getElementById("octane92Price").textContent = "2125 MMK";
-document.getElementById("premiumDieselPrice").textContent = "2150 MMK";
-document.getElementById("octane95Price").textContent = "2900 MMK";
+// Update Fuel Prices (Hard-coded for demonstration)
+function updateFuelPrices() {
+  const data = {
+    date: "February 16, 2025",
+    diesel: "2700 MMK",
+    octane92: "2600 MMK",
+    premiumDiesel: "3000 MMK",
+    octane95: "3200 MMK"
+  };
+
+  document.getElementById("dieselPrice").innerText = data.diesel;
+  document.getElementById("octane92Price").innerText = data.octane92;
+  document.getElementById("premiumDieselPrice").innerText = data.premiumDiesel;
+  document.getElementById("octane95Price").innerText = data.octane95;
+  document.getElementById("effective-date").innerText = data.date;
+}
+
+updateFuelPrices();
+// Optionally, auto-refresh fuel prices every 60 seconds:
+// setInterval(updateFuelPrices, 60000);
