@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuel Station</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <!-- Use your high-resolution logo; update src if needed -->
+        <img id="logo" src="assets/logo.png" alt="Fuel Station Logo">
+      </div>
+      <p class="address">
+        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်<br>
+        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br>
+        <span class="hotline">📞 Hotline: <strong>09-8762005</strong></span>
+      </p>
+    </header>
+
+    <!-- Date and Time (with emojis) -->
+    <div class="datetime">
+      <p id="current-date">📅 Date: Loading...</p>
+      <p id="current-time">⏰ Time: Loading...</p>
+    </div>
+
+    <h2 class="fuel-title">⛽ Today's Fuel Prices</h2>
+
+    <div class="fuel-grid">
+      <div class="fuel-item" id="diesel">
+        <h3 class="fuel-name">Diesel</h3>
+        <p class="fuel-price" id="dieselPrice">Loading...</p>
+      </div>
+      <div class="fuel-item" id="octane92">
+        <h3 class="fuel-name">Octane 92</h3>
+        <p class="fuel-price" id="octane92Price">Loading...</p>
+      </div>
+      <div class="fuel-item" id="premiumDiesel">
+        <h3 class="fuel-name">Premium Diesel</h3>
+        <p class="fuel-price" id="premiumDieselPrice">Loading...</p>
+      </div>
+      <div class="fuel-item" id="octane95">
+        <h3 class="fuel-name">Octane 95</h3>
+        <p class="fuel-price" id="octane95Price">Loading...</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Effective on: <span id="effective-date">February 16, 2025</span></p>
+      <p>Prices are indicative and subject to change without notice.</p>
+      <a href="#" class="view-all">See All Fuel Prices ➔</a>
+    </footer>
+  </div>
+</body>
+</html>
