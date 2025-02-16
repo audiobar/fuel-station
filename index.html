@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fuel Station</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="logo-container">
-        <img id="logo" src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto" alt="Fuel Station Logo">
-      </div>
+    <!-- Header with Logo and Address -->
+    <div class="header">
+      <img
+        src="https://api.pcloud.com/getpubthumb?code=XZVDqH5ZB7XHlNvUgvh1zOGIo0Iqy4hunm3y&linkpassword=undefined&size=1912x980&crop=0&type=auto"
+        alt="NL Oil Logo"
+        class="logo"
+      />
       <p class="address">
-        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်<br>
-        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br>
-        <span class="hotline">☎️ Hotline: <strong>09-8762005</strong></span>
+        ရှမ်းချောင်းလမ်းမကြီး | က.ရ.ခ(တိုင်)ထိပ်<br />
+        မြိတ်မြို့ ၊ တနင်္သာရီတိုင်းဒေသကြီး<br />
+        <span class="hotline">📞 : 09-8762005</span>
       </p>
-    </header>
-
-    <div class="datetime">
-      <p id="current-date">📅 Loading...</p>
-      <p id="current-time">⏰ Loading...</p>
     </div>
 
-    <h2 class="fuel-title"><span class="emoji">⛽</span> Today's Fuel Prices</h2>
+    <!-- Current Time -->
+    <p class="time" id="timeDisplay">Current Time: 00:00:00 AM</p>
 
+    <!-- Daily Fuel Rates Title -->
+    <h2 class="daily-title">
+      ⛽ Daily Fuel Rates <span class="emoji">📅</span>
+    </h2>
+
+    <!-- Fuel Rate Grid -->
     <div class="fuel-grid">
-      <div class="fuel-item" id="diesel">
-        <h3 class="fuel-name">Diesel</h3>
-        <p class="fuel-price" id="dieselPrice">Loading...</p>
+      <div class="fuel-item">
+        <div class="fuel-type">DIESEL</div>
+        <div class="price" id="dieselPrice">2125 MMK</div>
       </div>
-      <div class="fuel-item" id="octane92">
-        <h3 class="fuel-name">Octane 92</h3>
-        <p class="fuel-price" id="octane92Price">Loading...</p>
+      <div class="fuel-item">
+        <div class="fuel-type">OCTANE 92</div>
+        <div class="price" id="octane92Price">2125 MMK</div>
       </div>
-      <div class="fuel-item" id="premiumDiesel">
-        <h3 class="fuel-name">Premium Diesel</h3>
-        <p class="fuel-price" id="premiumDieselPrice">Loading...</p>
+      <div class="fuel-item">
+        <!-- Single line "PREMIUM DIESEL" -->
+        <div class="fuel-type">PREMIUM DIESEL</div>
+        <div class="price" id="premiumDieselPrice">2150 MMK</div>
       </div>
-      <div class="fuel-item" id="octane95">
-        <h3 class="fuel-name">Octane 95</h3>
-        <p class="fuel-price" id="octane95Price">Loading...</p>
+      <div class="fuel-item">
+        <div class="fuel-type">OCTANE 95</div>
+        <div class="price" id="octane95Price">2900 MMK</div>
       </div>
     </div>
 
-    <footer>
-      <p>Effective on: <span id="effective-date">February 16, 2025</span></p>
-      <p>Prices are indicative and subject to change without notice.</p>
-      <a href="#" class="view-all">See All Fuel Prices ➔</a>
-    </footer>
+    <!-- Note -->
+    <div class="note">
+      Effective on FEB 13, 2025<br />
+      Rates shown are indicative only and Subject to Change without Notice.
+    </div>
+
+    <!-- Footer Link -->
+    <div class="footer">
+      <a href="#">SEE ALL FUEL PRICES ➔</a>
+    </div>
   </div>
 </body>
 </html>
